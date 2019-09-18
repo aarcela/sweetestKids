@@ -1,0 +1,15 @@
+<nav class="nav-extended light-blue darken-4">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">TIMBALAND 2019</a>
+    <a href="#mobile-nav" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li ng-class="{ active: isActive('/')}"><a href="#">Inicio</a></li>
+      <li ng-class="{ active: isActive('/contest')}"><a href="#!contest">Concurso</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li ng-class="{ active: isActive('/')}""><a href="#">Inicio</a></li>
+  <li ng-class="{ active: isActive('/contest')}"><a href="#!contest">Concurso</a></li>
+</ul>

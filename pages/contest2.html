@@ -1,0 +1,28 @@
+<nav class="nav-extended enruedate_blue_color">
+	<div class="nav-wrapper center">
+		<h6 class="nav-title ">
+			Congreso Enruedate
+		</h6>
+	</div>
+</nav>
+
+<div class="container" ng-show="!showCategory">
+	<div class="row contest-loader">
+		<div class="col s12">
+			<div class="progress">
+				<div class="indeterminate green accent-3" ng-if="state.isModified"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col m6 s12" ng-repeat="sheetName in state.sheetsNames"
+			ng-click="goToTop($index, sheetName, state.sheets[$index])">
+			<div class="card-panel large blue accent-3">
+				<!-- <div class="card-content "> -->
+					<span class="card-title white-text">{{sheetName}}</span>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-include ng-show="showCategory"  src="'/pages/top/top_template.html'"></div>

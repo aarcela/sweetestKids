@@ -1,0 +1,44 @@
+/* @font-face {
+	font-family: 'barcade_no_bar_italicitalic';
+	src: url('assets/fonts/barcadenobarital-webfont.woff2') format('woff2'), url('assets/fonts/barcadenobarital-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'barcade_bold_italicBdIt';
+	src: url('assets/fonts/BAHNSCHRIFT.TTF') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+/* 
+Green : #b4ff00
+Blue:04337e 
+*/
+
+body {
+	height: 100%;
+	font-family: 'Roboto-Regular';
+	font-weight: normal;
+	font-style: normal;
+	background-image: url("/assets/image/bg_general.jpg");
+	background-color: #cccccc;
+	background-size: contain;
+}
+
+.enruedate_green_color{
+	background-color: #b4ff00;	
+}
+
+.enruedate_blue_color {
+	background-color: #04337e;
+}
