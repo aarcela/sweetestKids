@@ -14,7 +14,7 @@
 
 @font-face {
 	font-family: 'Roboto-Regular';
-	src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
+	src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 
@@ -32,13 +32,25 @@ body {
 	font-style: normal;
 	background-image: url("/assets/image/bg_general.jpg");
 	background-color: #cccccc;
-	background-size: contain;
+	background-size: cover;
 }
 
-.enruedate_green_color{
-	background-color: #b4ff00;	
+.home_bg {
+
+	background-image: url("/assets/image/portada-Enruedate-2019.jpg");
+	background-color: #cccccc;
+	background-size: cover;
+	height: 100%;
+}
+
+.enruedate_green_color {
+	background-color: #b4ff00;
 }
 
 .enruedate_blue_color {
 	background-color: #04337e;
+}
+
+.margins-top-bottom {
+	margin: 1rem 0 0 0;
 }

@@ -3,24 +3,23 @@ const app = angular.module('app', ['ui.materialize', 'ngRoute']);
 app.config(function ($locationProvider, $routeProvider) {
 	$routeProvider
 		.when("/", {
-			// templateUrl: "./pages/home.html",
-			templateUrl: "./pages/contest2.html",
+			templateUrl: "./pages/home.html",
 			controller: "App"
 		})
-		.when("/contest", {
-			templateUrl: "./pages/contest2.html",
-			controller: "App"
-		})
-		.when("/top", {
-			templateUrl: "pages/top/top_template.html",
-			controller: "App"
-		})
-		.when("/evaluation", {
-			templateUrl: "pages/evaluation/evaluation_template.html"
-		})
-		.otherwise({
-			redirectTo: '/'
-		});
+		// .when("/contest", {
+		// 	templateUrl: "./pages/contest2.html",
+		// 	controller: "App"
+		// })
+		// .when("/top", {
+		// 	templateUrl: "pages/top/top_template.html",
+		// 	controller: "App"
+		// })
+		// .when("/evaluation", {
+		// 	templateUrl: "pages/evaluation/evaluation_template.html"
+		// })
+		// .otherwise({
+		// 	redirectTo: '/'
+		// });
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
@@ -41,18 +40,20 @@ app.controller('App',
 
 			$scope.curretCategory = ""
 			$scope.showCategory = false
+			$scope.goToContest = false
 			
 
 			$scope.isActive = (viewLocation) => {
 				return viewLocation === $location.path();
 			};
 
-			$scope.goToContest = () => {
-				$location.path('/contest')
+			$scope.actionGoToContest = () => {
+				$scope.goToContest =true
 			}
 			$scope.goBack = () => {
 				$scope.showCategory = false
-				$scope.topSheet = null			
+				$scope.topSheet = null		
+				$scope.currentCategory = ""	
 			}
 
 			$scope.getData = () => {

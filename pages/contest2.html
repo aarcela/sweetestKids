@@ -1,12 +1,23 @@
 <nav class="nav-extended enruedate_blue_color">
-	<div class="nav-wrapper center">
-		<h6 class="nav-title ">
-			Congreso Enruedate
-		</h6>
+	<div class="nav-wrapper">
+		<div class="row">
+			<div class="col s2 m1">
+				<img src="/assets/image/logo_enruedate.png" class="responsive-img margins-top-bottom" alt="">
+			</div>
+			<div class="col s9 m11 hide-on-med-and-up">
+				<ul id="nav-mobile" class="right">
+					<!-- <li>Categorias</li> -->
+					<!-- <li><a href="collapsible.html">JavaScript</a></li> -->
+				</ul>
+			</div>
+		</div>
 	</div>
 </nav>
+<h5 class="center teal-text">{{currentCategory}}</h5>
+
 
 <div class="container" ng-show="!showCategory">
+	<h5 class="center teal-text">Seleccione la categoría</h5>
 	<div class="row contest-loader">
 		<div class="col s12">
 			<div class="progress">
@@ -19,10 +30,10 @@
 			ng-click="goToTop($index, sheetName, state.sheets[$index])">
 			<div class="card-panel large blue accent-3">
 				<!-- <div class="card-content "> -->
-					<span class="card-title white-text">{{sheetName}}</span>
+				<span class="card-title white-text">{{sheetName}}</span>
 				<!-- </div> -->
 			</div>
 		</div>
 	</div>
 </div>
-<div ng-include ng-show="showCategory"  src="'/pages/top/top_template.html'"></div>
+<div ng-include ng-show="showCategory" src="'/pages/top/top_template.html'"></div>
