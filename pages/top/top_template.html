@@ -1,40 +1,54 @@
-<div class="">
-	<table class="responsive-table centered">
-		<thead>
-			<tr ng-repeat="value in header" ng-if="value != null">
-				<th>{{value.participante}}</th>
-				<th>{{value.academia}}</th>
-				<th>{{value.item_1}}</th>
-				<th>{{value.item_2}}</th>
-				<th>{{value.item_3}}</th>
-				<th>{{value.item_4}}</th>
-				<th>{{value.item_5}}</th>
-				<th>{{value.item_6}}</th>
-				<th>{{value.item_7}}</th>
-				<th>{{value.item_8}}</th>
-				<th>{{value.item_9}}</th>
-				<th>{{value.item_10}}</th>
-			</tr>
-		</thead>
+<nav class="enruedate_blue_color">
+	<div class="nav-wrapper">
 
-		<tbody>
-			<tr ng-repeat="value in top" ng-if="value != null">
-				<td>{{value.participante}}</td>
-				<td>{{value.academia}}</td>
-				<td>{{value.item_1}}</td>
-				<td>{{value.item_2}}</td>
-				<td>{{value.item_3}}</td>
-				<td>{{value.item_4}}</td>
-				<td>{{value.item_5}}</td>
-				<td>{{value.item_6}}</td>
-				<td>{{value.item_7}}</td>
-				<td>{{value.item_8}}</td>
-				<td>{{value.item_9}}</td>
-				<td>{{value.item_10}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+		<form>
+			<div class="input-field">
+				<input id="search" type="search" ng-model="search.participante" required>
+				<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+				<i class="material-icons">close</i>
+			</div>
+		</form>
+	</div>
+</nav>
+<h5 class="center teal-text">{{currentCategory}}</h5>
+<table class="responsive-table centered">
+	<thead>
+		<tr ng-repeat="value in header" ng-if="value != null">
+			<th class="teal-text">{{value.participante}}</th>
+			<th class="teal-text">{{value.academia}}</th>
+			<th class="teal-text">{{value.total}}</th>
+			<th>{{value.item_1}}</th>
+			<th>{{value.item_2}}</th>
+			<th>{{value.item_3}}</th>
+			<th>{{value.item_4}}</th>
+			<th>{{value.item_5}}</th>
+			<th>{{value.item_6}}</th>
+			<th>{{value.item_7}}</th>
+			<th>{{value.item_8}}</th>
+			<th>{{value.item_9}}</th>
+			<th>{{value.item_10}}</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr ng-repeat="value in top | limitTo: 10 | filter:search" ng-if="value != null">
+			<td class="teal-text">{{value.participante}}</td>
+			<td class="teal-text">{{value.academia}}</td>
+			<td class="teal-text">{{value.total}}</td>
+			<td>{{value.item_1}}</td>
+			<td>{{value.item_2}}</td>
+			<td>{{value.item_3}}</td>
+			<td>{{value.item_4}}</td>
+			<td>{{value.item_5}}</td>
+			<td>{{value.item_6}}</td>
+			<td>{{value.item_7}}</td>
+			<td>{{value.item_8}}</td>
+			<td>{{value.item_9}}</td>
+			<td>{{value.item_10}}</td>
+		</tr>
+	</tbody>
+</table>
+
 
 <div class="fixed-action-btn">
 	<a class="btn-floating btn-large waves-effect waves-light" ng-click="goBack()"><i

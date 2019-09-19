@@ -1,4 +1,4 @@
-<nav class="nav-extended enruedate_blue_color">
+<nav class="nav-extended enruedate_blue_color" ng-show="!showCategory">
 	<div class="nav-wrapper">
 		<div class="row">
 			<div class="col s2 m1">
@@ -13,11 +13,8 @@
 		</div>
 	</div>
 </nav>
-<h5 class="center teal-text">{{currentCategory}}</h5>
-
-
 <div class="container" ng-show="!showCategory">
-	<h5 class="center teal-text">Seleccione la categoría</h5>
+	<h5 class="center teal-text">Seleccione una categoría</h5>
 	<div class="row contest-loader">
 		<div class="col s12">
 			<div class="progress">
@@ -28,12 +25,16 @@
 	<div class="row">
 		<div class="col m6 s12" ng-repeat="sheetName in state.sheetsNames"
 			ng-click="goToTop($index, sheetName, state.sheets[$index])">
-			<div class="card-panel large blue accent-3">
+			<div class="card-panel large enruedate_blue_color ">
 				<!-- <div class="card-content "> -->
 				<span class="card-title white-text">{{sheetName}}</span>
 				<!-- </div> -->
 			</div>
 		</div>
 	</div>
+	<div class="fixed-action-btn">
+		<a class="btn-floating btn-large waves-effect waves-light" ng-click="goToIndex()"><i
+				class="material-icons small">home</i></a>
+	</div>
 </div>
-<div ng-include ng-show="showCategory" src="'/pages/top/top_template.html'"></div>
+<ng-include ng-show="showCategory" src="'/pages/top/top_template.html'"></ng-include>

@@ -40,7 +40,7 @@ app.controller('App',
 
 			$scope.curretCategory = ""
 			$scope.showCategory = false
-			$scope.goToContest = false
+			$scope.goToContest = true
 			
 
 			$scope.isActive = (viewLocation) => {
@@ -54,6 +54,10 @@ app.controller('App',
 				$scope.showCategory = false
 				$scope.topSheet = null		
 				$scope.currentCategory = ""	
+			}
+
+			$scope.goToIndex = () =>{
+				$scope.goToContest = false
 			}
 
 			$scope.getData = () => {
