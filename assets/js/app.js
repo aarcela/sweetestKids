@@ -40,7 +40,7 @@ app.controller('App',
 
 			$scope.curretCategory = ""
 			$scope.showCategory = false
-			$scope.goToContest = true
+			$scope.goToContest = false
 			
 
 			$scope.isActive = (viewLocation) => {
