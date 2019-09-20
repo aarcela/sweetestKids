@@ -40,15 +40,35 @@ body {
 	background-size: cover;
 }
 
+table{
+	font-size: larger
+}
+
 .home_bg {
 
 	    background-image: url("/assets/image/portada-Enruedate-2019.jpg");
-	    background-size: auto 100%;
+	    background-size: cover;
 	    height: 100%;
-	    background-position: left top;
+	    background-position: bottom;
 	    background-attachment: fixed;
 	    width: 100%;
-	    background-position: center;
+		 background-repeat: no-repeat;
+}
+
+.enruedate_bg{
+
+	    /* background-image: url('/assets/image/fondo-Enruedate-2019.jpg'); */
+	    background-size: cover;
+	    height: 100%;
+	    background-position: bottom;
+	    background-attachment: fixed;
+	    width: 100%;
+	    background-repeat: no-repeat;
+}
+
+.custom_center_position{
+	position: absolute;
+	top: 45%
 }
 
 .enruedate_green_color {

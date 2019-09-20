@@ -6,20 +6,20 @@ app.config(function ($locationProvider, $routeProvider) {
 			templateUrl: "./pages/home.html",
 			controller: "App"
 		})
-		// .when("/contest", {
-		// 	templateUrl: "./pages/contest2.html",
-		// 	controller: "App"
-		// })
-		// .when("/top", {
-		// 	templateUrl: "pages/top/top_template.html",
-		// 	controller: "App"
-		// })
-		// .when("/evaluation", {
-		// 	templateUrl: "pages/evaluation/evaluation_template.html"
-		// })
-		// .otherwise({
-		// 	redirectTo: '/'
-		// });
+	// .when("/contest", {
+	// 	templateUrl: "./pages/contest2.html",
+	// 	controller: "App"
+	// })
+	// .when("/top", {
+	// 	templateUrl: "pages/top/top_template.html",
+	// 	controller: "App"
+	// })
+	// .when("/evaluation", {
+	// 	templateUrl: "pages/evaluation/evaluation_template.html"
+	// })
+	// .otherwise({
+	// 	redirectTo: '/'
+	// });
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
@@ -41,23 +41,32 @@ app.controller('App',
 			$scope.curretCategory = ""
 			$scope.showCategory = false
 			$scope.goToContest = false
-			
+			$scope.showTab = false
+			$activeTab1 = 'active'
 
 			$scope.isActive = (viewLocation) => {
 				return viewLocation === $location.path();
 			};
 
 			$scope.actionGoToContest = () => {
-				$scope.goToContest =true
+				$scope.goToContest = true
 			}
 			$scope.goBack = () => {
 				$scope.showCategory = false
-				$scope.topSheet = null		
-				$scope.currentCategory = ""	
+				$scope.topSheet = null
+				$scope.currentCategory = ""
+				$scope.showTab = false
 			}
 
-			$scope.goToIndex = () =>{
+			$scope.goToIndex = () => {
 				$scope.goToContest = false
+			}
+
+			$scope.changeTab = ($event, id) => {
+
+				id == 1 ? $scope.showTab = true : $scope.showTab = false
+				$activeTab1 = $event.target.id == 'tab1' ? 'active' : ''
+				$activeTab2 = $event.target.id == 'tab2' ? 'active' : ''
 			}
 
 			$scope.getData = () => {
@@ -96,7 +105,7 @@ app.controller('App',
 						}
 					);
 			}
-			
+
 			$scope.reloadData = () => {
 
 				$http({
@@ -144,6 +153,7 @@ app.controller('App',
 
 			$scope.goToTop = (index, currentCategory, sheet) => {
 				// debugger
+				$scope.showTab = true
 				$scope.showCategory = true
 				$scope.currentCategory = currentCategory
 				$scope.index = index

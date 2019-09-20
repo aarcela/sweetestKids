@@ -1,6 +1,14 @@
-<nav class="enruedate_blue_color">
+<nav class="enruedate_blue_color z-depth-0">
+	<div class="nav-content">
+		<ul class="tabs tabs-transparent">
+			<li ng-click="changeTab($event, 1)" class="tab"><a ng-class="activeTab1" id="tab1" href="#">Top 10</a></li>
+			<li ng-click="changeTab($event, 2)" class="tab"><a ng-class="activeTab2" id="tab2" href="#">Detalle</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<nav class="enruedate_blue_color z-depth-0" ng-show="!showTab">
 	<div class="nav-wrapper">
-
 		<form>
 			<div class="input-field">
 				<input id="search" type="search" ng-model="search.participante" required>
@@ -10,8 +18,32 @@
 		</form>
 	</div>
 </nav>
-<h5 class="center teal-text">{{currentCategory}}</h5>
-<table class="responsive-table centered">
+
+
+<h5 class="center teal-text row">{{currentCategory}}</h5>
+
+
+<div class="container" ng-show="showTab">
+	<table class="responsive-table">
+		<thead>
+			<tr ng-repeat="value in header" ng-if="value != null">
+				<th class="teal-text">{{value.participante}}</th>
+				<th class="teal-text">{{value.academia}}</th>
+				<th class="teal-text">{{value.total}}</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="value in top | limitTo: 10 | filter:search" ng-if="value != null">
+				<td>{{value.participante}}</td>
+				<td>{{value.academia}}</td>
+				<td>{{value.total}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<table class="responsive-table centered" ng-show="!showTab">
 	<thead>
 		<tr ng-repeat="value in header" ng-if="value != null">
 			<th class="teal-text">{{value.participante}}</th>
@@ -31,7 +63,7 @@
 	</thead>
 
 	<tbody>
-		<tr ng-repeat="value in top | limitTo: 10 | filter:search" ng-if="value != null">
+		<tr ng-repeat="value in top | filter:search" ng-if="value != null">
 			<td class="teal-text">{{value.participante}}</td>
 			<td class="teal-text">{{value.academia}}</td>
 			<td class="teal-text">{{value.total}}</td>
@@ -54,6 +86,8 @@
 	<a class="btn-floating btn-large waves-effect waves-light" ng-click="goBack()"><i
 			class="material-icons small">arrow_back</i></a>
 </div>
+
+
 <!-- <footer class="page-footer enruedate_blue_color">
 	<div class="footer-copyright">
 		<div class="container">
