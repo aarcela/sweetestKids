@@ -41,7 +41,7 @@ body {
 }
 
 table{
-	font-size: larger
+	font-size: large
 }
 
 .home_bg {
@@ -57,7 +57,7 @@ table{
 
 .enruedate_bg{
 
-	    /* background-image: url('/assets/image/fondo-Enruedate-2019.jpg'); */
+	    background-image: url('/assets/image/fondo-Enruedate-2019.jpg');
 	    background-size: cover;
 	    height: 100%;
 	    background-position: bottom;
@@ -82,3 +82,4 @@ table{
 .margins-top-bottom {
 	margin: 1rem 0 0 0;
 }
+
