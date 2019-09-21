@@ -1,24 +1,23 @@
-<nav class="enruedate_blue_color z-depth-0">
+<nav class="nav-extended enruedate_blue_color z-depth-0">
 	<div class="nav-content">
 		<ul class="tabs tabs-transparent">
-			<li ng-click="changeTab($event, 1)" class="tab"><a ng-class="activeTab1" id="tab1" href="#">Top</a></li>
-			<li ng-click="changeTab($event, 2)" class="tab"><a ng-class="activeTab2" id="tab2" href="#">Detalle</a>
+			<li ng-click="changeTab($event, 1)" ng-class="activeTab1" class="tab"><a id="tab1" href="#">Top</a></li>
+			<li ng-click="changeTab($event, 2)" ng-class="activeTab2" class="tab"><a id="tab2" href="#">Detalle</a>
 			</li>
 		</ul>
 	</div>
 </nav>
-<nav class="enruedate_blue_color z-depth-0" ng-show="!showTab">
+<nav class="tab_bg_active z-depth-0" ng-show="!showTab">
 	<div class="nav-wrapper">
 		<form>
 			<div class="input-field">
-				<input id="search" type="search" ng-model="search.participante" required>
+				<input id="search" type="search" ng-model="search.participante" placeholder="Buscar participante..." required>
 				<label class="label-icon" for="search"><i class="material-icons">search</i></label>
 				<i class="material-icons">close</i>
 			</div>
 		</form>
 	</div>
 </nav>
-
 
 <h5 class="center teal-text row">{{currentCategory}}</h5>
 
@@ -43,10 +42,10 @@
 	</table>
 </div>
 
-<table class="responsive-table centered" ng-show="!showTab">
+<table class="responsive-table" ng-show="!showTab">
 	<thead>
 		<tr ng-repeat="value in header" ng-if="value != null">
-			<th class="teal-text">{{value.participante}}</th>
+			<th class="teal-text left-align">{{value.participante}}</th>
 			<th class="teal-text">{{value.academia}}</th>
 			<th class="teal-text">{{value.total}}</th>
 			<th>{{value.item_1}}</th>

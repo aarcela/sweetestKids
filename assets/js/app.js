@@ -17,9 +17,9 @@ app.config(function ($locationProvider, $routeProvider) {
 	// .when("/evaluation", {
 	// 	templateUrl: "pages/evaluation/evaluation_template.html"
 	// })
-	// .otherwise({
-	// 	redirectTo: '/'
-	// });
+	.otherwise({
+		redirectTo: '/'
+	});
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
@@ -42,7 +42,7 @@ app.controller('App',
 			$scope.showCategory = false
 			$scope.goToContest = false
 			$scope.showTab = false
-			$activeTab1 = 'active'
+			$scope.activeTab1 = 'tab_bg_active'
 
 			$scope.isActive = (viewLocation) => {
 				return viewLocation === $location.path();
@@ -50,6 +50,9 @@ app.controller('App',
 
 			$scope.actionGoToContest = () => {
 				$scope.goToContest = true
+				 M.toast({
+				 	html: 'Bienvenido!'
+				 })
 			}
 			$scope.goBack = () => {
 				$scope.showCategory = false
@@ -65,8 +68,8 @@ app.controller('App',
 			$scope.changeTab = ($event, id) => {
 
 				id == 1 ? $scope.showTab = true : $scope.showTab = false
-				$activeTab1 = $event.target.id == 'tab1' ? 'active' : ''
-				$activeTab2 = $event.target.id == 'tab2' ? 'active' : ''
+				$scope.activeTab1 = $event.target.id == 'tab1' ? 'tab_bg_active' : ''
+				$scope.activeTab2 = $event.target.id == 'tab2' ? 'tab_bg_active' : ''
 			}
 
 			$scope.getData = () => {
@@ -106,49 +109,8 @@ app.controller('App',
 					);
 			}
 
-			$scope.reloadData = () => {
-
-				$http({
-						method: 'GET',
-						url: 'assets/data/timbaland2019.xlsx',
-						responseType: 'arraybuffer',
-						headers: {
-							'Cache-control': 'no-cache'
-						},
-					})
-					.then(
-						(data) => {
-
-							// console.log(data)
-
-							// if (data.headers('Last-Modified') !== $scope.state.lastModified) {
-							$scope.state.lastModified = data.headers('Last-Modified');
-							$scope.state.isModified = true;
-							$scope.state.book = XLSX.read(data.data, {
-								type: "array"
-							});
-							$timeout(
-								() => {
-									$scope.state.isModified = false;
-									for (i = 0; i < Object.keys($scope.state.book.Sheets).length; i += 1) {
-										$scope.state.sheets[i] = XLSX.utils.sheet_to_json($scope.state.book.Sheets[$scope.state.book.SheetNames[i]]);
-									}
-								},
-								1500
-
-							);
-							$scope.transformToObject()
-
-							// }
-						},
-						(err) => {
-							console.log(err);
-						}
-					);
-			}
-
 			$scope.getData();
-			$interval($scope.getData, 5000);
+			// $interval($scope.getData, 5000);
 
 
 			$scope.goToTop = (index, currentCategory, sheet) => {
@@ -159,6 +121,8 @@ app.controller('App',
 				$scope.index = index
 				$scope.topSheet = sheet
 				$scope.transformToObject($scope.topSheet)
+				$scope.activeTab1 = 'tab_bg_active'
+				$scope.activeTab2 = ''
 
 			}
 
