@@ -53,6 +53,7 @@ app.controller('App',
 				 M.toast({
 				 	html: 'Bienvenido!'
 				 })
+				 window.navigator.vibrate(200);
 			}
 			$scope.goBack = () => {
 				$scope.showCategory = false
