@@ -112,7 +112,7 @@ app.controller('App',
 			}
 
 			$scope.getData();
-			// $interval($scope.getData, 5000);
+			$interval($scope.getData, 5000);
 
 
 			$scope.goToTop = (index, currentCategory, sheet) => {
