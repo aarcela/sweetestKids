@@ -78,7 +78,7 @@ app.controller('App',
 
 				$http({
 						method: 'GET',
-						url: 'assets/data/timbaland2019.xlsx',
+						url: 'assets/data/enruedate2019.xlsx',
 						responseType: 'arraybuffer',
 						headers: {
 							'Cache-control': 'no-cache'
