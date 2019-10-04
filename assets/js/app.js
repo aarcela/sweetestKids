@@ -136,13 +136,15 @@ app.controller('App',
 					$scope.header = []
 					$scope.state.sheets[$scope.index].map((data, index) => {
 
+						console.log("pre", data.__EMPTY_3)
+
 						if (index === 0) {
 							$scope.header.push({
 								academia: data.__EMPTY,
 								participante: data.__EMPTY_1,
 								total: data.__EMPTY_2,
-								item_1: data.__EMPTY_4,
-								item_2: data.__EMPTY_3,
+								item_1: data.__EMPTY_3,
+								item_2: data.__EMPTY_4,							
 								item_3: data.__EMPTY_5,
 								item_4: data.__EMPTY_6,
 								item_5: data.__EMPTY_7,
@@ -158,8 +160,8 @@ app.controller('App',
 									academia: data.__EMPTY,
 									participante: data.__EMPTY_1,
 									total: data.__EMPTY_2,
-									item_1: data.__EMPTY_4,
-									item_2: data.__EMPTY_3,
+									item_1: data.__EMPTY_3,
+									item_2: data.__EMPTY_4,
 									item_3: data.__EMPTY_5,
 									item_4: data.__EMPTY_6,
 									item_5: data.__EMPTY_7,
@@ -175,6 +177,7 @@ app.controller('App',
 						}
 
 					})
+					console.log("HEADER", $scope.header)
 					console.log("DATA", $scope.top)
 				}
 			}
