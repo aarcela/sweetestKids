@@ -136,7 +136,7 @@ app.controller('App',
 					$scope.header = []
 					$scope.state.sheets[$scope.index].map((data, index) => {
 
-						console.log("pre", data.__EMPTY_3)
+						//console.log("pre", data.__EMPTY_3)
 
 						if (index === 0) {
 							$scope.header.push({

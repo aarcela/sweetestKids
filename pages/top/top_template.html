@@ -25,18 +25,18 @@
 <div class="container" ng-show="showTab">
 	<table class="responsive-table">
 		<thead>
-			<tr ng-repeat="value in header" ng-if="value != null">
-				<th class="teal-text">{{value.participante}}</th>
-				<th class="teal-text">{{value.academia}}</th>
-				<th class="teal-text">{{value.total}}</th>
+			<tr ng-repeat="value in header" ng-if="value">
+				<th class="teal-text" style="font-size: larger;">{{value.participante}}</th>
+				<th class="teal-text" style="font-size: larger;">{{value.academia}}</th>
+				<th class="teal-text" style="font-size: xx-large;">{{value.total}}</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			<tr ng-repeat="value in top | limitTo: 7" ng-if="value != null">
-				<td>{{value.participante}}</td>
-				<td>{{value.academia}}</td>
-				<td class="teal-text center">{{value.total}}</td>
+			<tr ng-repeat="value in top | limitTo: 7" ng-if="value">				
+				<td style="font-size: larger;">{{value.participante}}</td>
+				<td style="font-size: larger;">{{value.academia}}</td>				
+				<td class="teal-text center" style="font-size: xx-large;">{{value.total}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -44,10 +44,10 @@
 
 <table class="responsive-table" ng-show="!showTab">
 	<thead>
-		<tr ng-repeat="value in header" ng-if="value != null">
+		<tr ng-repeat="value in header" ng-if="value">
 			<th class="teal-text left-align">{{value.participante}}</th>
 			<th class="teal-text">{{value.academia}}</th>
-			<th class="teal-text">{{value.total}}</th>
+			<th class="teal-text" style="font-size: xx-large;">{{value.total}}</th>
 			<th>{{value.item_1}}</th>
 			<th>{{value.item_2}}</th>
 			<th>{{value.item_3}}</th>
@@ -62,10 +62,10 @@
 	</thead>
 
 	<tbody>
-		<tr ng-repeat="value in top | filter:search" ng-if="value != null">
+		<tr ng-repeat="value in top | filter:search" ng-if="value">
 			<td class="teal-text">{{value.participante}}</td>
 			<td class="teal-text">{{value.academia}}</td>
-			<td class="teal-text">{{value.total}}</td>
+			<td class="teal-text" style="font-size: xx-large;">{{value.total}}</td>
 			<td>{{value.item_1}}</td>
 			<td>{{value.item_2}}</td>
 			<td>{{value.item_3}}</td>
