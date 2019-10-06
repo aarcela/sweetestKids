@@ -23,7 +23,7 @@ const PRECACHE_URLS = [
 	'./', // Alias for index.html
 	'/assets/css/materialize.min.css',
 	'/assets/css/app.css',
-	'/assets/js/app.js'
+	//'/assets/js/app.js'
 ];
 
 // The install handler takes care of precaching the resources we always need.
