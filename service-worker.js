@@ -21,8 +21,8 @@ const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
 	'index.html',
 	'./', // Alias for index.html
-	'/assets/css/materialize.min.css',
-	'/assets/css/app.css',
+	// '/assets/css/materialize.min.css',
+	// '/assets/css/app.css',
 	//'/assets/js/app.js'
 ];
 
