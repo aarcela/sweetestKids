@@ -52,6 +52,9 @@ table {
 	color: #00a7ca;
 	text-align: center;
 }
+.card-title{
+	color: #00a7ca !important;
+}
 
 .enruedate_bg {
 
